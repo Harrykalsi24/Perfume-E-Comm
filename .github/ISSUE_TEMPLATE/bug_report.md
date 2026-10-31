@@ -27,3 +27,4 @@ If applicable, add screenshots to help explain your problem.
  - OS: [e.g. Windows 11, macOS, iOS, Android]
  - Browser: [e.g. Chrome, Safari, Firefox]
  - Version: [e.g. 120]
+

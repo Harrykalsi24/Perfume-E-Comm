@@ -162,3 +162,4 @@ Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for full detai
 - Repository: [Perfume-E-Comm](https://github.com/Harrykalsi24/Perfume-E-Comm)
 
 ⭐ If you find this project inspiring or helpful, please consider giving it a star on GitHub!
+
