@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#9f7aea">
-<title>PERFUMY</title>
+<title>PERFUMY | Luxury Artisanal Fragrance & Perfume E-Commerce</title>
+<meta name="description" content="Discover PERFUMY, a luxury e-commerce fragrance boutique offering long-lasting, artisanal perfumes, bespoke scent profiles, and ethically sourced natural ingredients.">
+<meta name="keywords" content="perfume, luxury fragrance, eau de parfum, extrait de parfum, artisanal scents, perfumy, e-commerce, fragrance boutique, london">
+<meta name="author" content="Harry Kalsi">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="PERFUMY | Luxury Artisanal Fragrance & Perfume E-Commerce">
+<meta property="og:description" content="Discover the perfect fragrance for your personality and style. Handcrafted luxury scents with long-lasting wear.">
+<meta property="og:image" content="./images/perfume.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PERFUMY | Luxury Artisanal Fragrance & Perfume E-Commerce">
+<meta name="twitter:description" content="Discover unique artisanal scents crafted with natural ingredients and long-lasting wear.">
+<meta name="twitter:image" content="./images/perfume.png">
+
 <link rel="icon" type="image/png" href="./images/perfume.png">
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#9f7aea',secondary:'#d6bcfa'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
@@ -76,33 +92,39 @@ color: #888;
   }
 }
 </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-<header class="w-full bg-white shadow-sm">
+<header class="w-full bg-white shadow-sm sticky top-0 z-50">
     <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row md:items-center space-y-3 md:space-y-0">
         <div class="flex items-center justify-between">
-            <h1 class="text-2xl font-['Pacifico']">PERFUMY</h1>
-            <button class="md:hidden text-gray-500" id="mobile-menu-button">
+            <a href="#home" class="flex items-center space-x-2">
+                <img src="./images/perfume.png" alt="Perfumy Logo" class="w-8 h-8 object-contain">
+                <span class="text-2xl font-['Pacifico'] text-gray-900">PERFUMY</span>
+            </a>
+            <button class="md:hidden text-gray-700 p-1 hover:text-primary transition" id="mobile-menu-button" aria-label="Toggle navigation">
                 <i class="ri-menu-line text-2xl"></i>
             </button>
         </div>
         <div class="hidden md:flex flex-col md:flex-row md:items-center md:justify-between w-full" id="mobile-menu">
             <span class="text-xs uppercase tracking-wider text-gray-500 flex items-center mb-3 md:mb-0 md:ml-8">
-                <i class="ri-map-pin-line mr-1"></i>London
+                <i class="ri-map-pin-line mr-1 text-primary"></i>Bond Street, London
             </span>
             <div class="flex flex-col md:flex-row md:items-center space-y-3 md:space-y-0 md:space-x-6">
                 <div class="relative w-full md:w-64">
-                    <input type="text" placeholder="Search Products..." class="w-full py-1 px-3 border border-gray-200 rounded-full text-sm">
+                    <input type="text" placeholder="Search fragrances..." class="w-full py-1.5 pl-3 pr-8 border border-gray-200 rounded-full text-sm focus:outline-none focus:border-primary transition">
                     <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
                         <i class="ri-search-line text-gray-400"></i>
                     </div>
                 </div>
                 <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100">
-                        <i class="ri-user-line text-gray-600"></i>
-                    </div>
-                    <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100">
-                        <i class="ri-shopping-bag-line text-gray-600"></i>
-                    </div>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary/20 text-gray-700 hover:text-purple-900 transition" aria-label="User Account">
+                        <i class="ri-user-line text-base"></i>
+                    </button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary/20 text-gray-700 hover:text-purple-900 transition relative" aria-label="Shopping Cart">
+                        <i class="ri-shopping-bag-line text-base"></i>
+                        <span class="absolute -top-1 -right-1 bg-primary text-gray-900 font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">3</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -110,50 +132,56 @@ color: #888;
     <nav class="bg-gray-900 text-white">
         <div class="container mx-auto">
             <ul class="flex flex-col md:flex-row relative">
-                <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer flex items-center" id="all-categories-btn">
-                    <i class="ri-menu-line mr-2"></i> All Categories
+                <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer flex items-center transition" id="all-categories-btn">
+                    <i class="ri-menu-line mr-2"></i> All Categories <i class="ri-arrow-down-s-line ml-1 text-xs"></i>
                 </li>
                 <!-- Nav links: hidden on mobile, shown on md+ -->
                 <div class="hidden md:flex flex-col md:flex-row md:static absolute left-0 w-full md:w-auto bg-gray-900 md:bg-transparent z-20" id="mobile-dropdown">
-                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer">Home</li>
-                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer">About Us</li>
-                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer">Popular Products</li>
-                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer">Blog</li>
-                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer">Contact Us</li>
+                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer transition"><a href="#home" class="block w-full nav-link">Home</a></li>
+                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer transition"><a href="#about" class="block w-full nav-link">About Us</a></li>
+                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer transition"><a href="#products" class="block w-full nav-link">Popular Products</a></li>
+                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer transition"><a href="#qualities" class="block w-full nav-link">Our Qualities</a></li>
+                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer transition"><a href="#testimonials" class="block w-full nav-link">Testimonials</a></li>
+                    <li class="px-6 py-3 text-sm hover:bg-gray-800 cursor-pointer transition"><a href="#contact" class="block w-full nav-link">Contact Us</a></li>
                 </div>
             </ul>
         </div>
     </nav>
 </header>
+
 <!-- Hero Section -->
-<section class="hero-section w-full min-h-[600px] relative">
+<section id="home" class="hero-section w-full min-h-[600px] relative flex items-center">
 <div class="container mx-auto px-4 py-20 h-full">
 <div class="w-full md:w-1/2 pt-10">
-<h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Everything's better with a bit of Fragrance.</h2>
-<h4 class="text-gray-700 mb-8 max-w-md">Discover the perfect fragrance for your personality and style. Elevate your presence with our premium scents.</h4>
-<button class="bg-gray-900 text-white px-8 py-3 font-medium !rounded-button hover:bg-primary hover:text-gray-900 transition-all duration-300 whitespace-nowrap">Shop Now</button>
-<div class="flex items-center mt-8 space-x-8">
+<span class="inline-block px-3.5 py-1 bg-white/80 backdrop-blur-sm text-purple-900 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">Artisanal Haute Parfumerie</span>
+<h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-gray-900">Everything's better with a bit of Fragrance.</h2>
+<h4 class="text-gray-700 mb-8 max-w-md text-base leading-relaxed">Discover the perfect fragrance for your personality and style. Elevate your presence with our rare, sustainably crafted luxury scents.</h4>
+<div class="flex flex-wrap items-center gap-4">
+    <a href="#products" class="inline-block bg-gray-900 text-white px-8 py-3.5 font-medium !rounded-button hover:bg-primary hover:text-gray-900 transition-all duration-300 whitespace-nowrap shadow-md">Shop Collection</a>
+    <a href="#about" class="inline-block bg-white/90 backdrop-blur-sm text-gray-900 border border-gray-300 px-6 py-3.5 font-medium !rounded-button hover:bg-white hover:border-primary transition-all duration-300 whitespace-nowrap shadow-sm">Our Story</a>
+</div>
+<div class="flex items-center mt-10 space-x-6 sm:space-x-8">
 <div class="text-center">
 <div class="stat-circle mx-auto mb-2 shadow-md">
 <div class="px-4">
-<p class="text-xl font-bold">1200</p>
-<p class="text-[10px] text-gray-500">Unique Scents</p>
-</div>
-</div>
-</div>
-<div class="text-center">
-<div class="stat-circle mx-auto mb-2 shadow-md">
-<div class="px-4">
-<p class="text-xl font-bold">150+</p>
-<p class="text-[10px] text-gray-500">Brands</p>
+<p class="text-xl font-bold text-gray-900">1,200</p>
+<p class="text-[10px] text-gray-500 uppercase tracking-wider">Unique Scents</p>
 </div>
 </div>
 </div>
 <div class="text-center">
 <div class="stat-circle mx-auto mb-2 shadow-md">
 <div class="px-4">
-<p class="text-xl font-bold">1M</p>
-<p class="text-[10px] text-gray-500">Happy Customers</p>
+<p class="text-xl font-bold text-gray-900">150+</p>
+<p class="text-[10px] text-gray-500 uppercase tracking-wider">Artisan Brands</p>
+</div>
+</div>
+</div>
+<div class="text-center">
+<div class="stat-circle mx-auto mb-2 shadow-md">
+<div class="px-4">
+<p class="text-xl font-bold text-gray-900">1M+</p>
+<p class="text-[10px] text-gray-500 uppercase tracking-wider">Happy Clients</p>
 </div>
 </div>
 </div>
@@ -161,286 +189,418 @@ color: #888;
 </div>
 </div>
 </section>
-<!-- Product Showcase -->
-<section class="py-16 bg-gray-50">
-<div class="container mx-auto px-4">
-<h2 class="text-3xl font-bold text-center mb-2">Shop Our Wide Fragrance Perfume</h2>
-<p class="text-gray-600 text-center mb-12">Discover the wide range variety of long-lasting luxury perfume packages and indulge yourself.</p>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-<!-- Product 1 -->
-<div class="bg-white p-6 rounded shadow-sm flex flex-col transition-transform duration-300 hover:-translate-y-3 hover:shadow-2xl hover:border-primary border border-transparent group relative overflow-hidden">
-    <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
-    <div class="mb-6 h-64 bg-primary/10 rounded flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-        <img src="./images/pr1.jpg" alt="Mystic Orchid Perfume" class="h-56 object-contain object-top transition-transform duration-300 group-hover:scale-110">
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-white relative overflow-hidden border-b border-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <!-- Left: Visual showcase with brand artwork & floating rating badge -->
+            <div class="w-full lg:w-1/2 relative flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <!-- Ambient Glow backdrop -->
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-3xl blur-2xl opacity-70"></div>
+                    
+                    <div class="relative rounded-2xl overflow-hidden border border-purple-100 shadow-xl bg-gradient-to-b from-purple-50/80 via-white to-white p-8 sm:p-10 flex flex-col items-center justify-center text-center">
+                        <div class="w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center mb-6">
+                            <img src="./images/perfume.png" alt="Perfumy Artisanal Flacon" class="max-w-full max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <span class="inline-block px-3.5 py-1 bg-primary/20 text-purple-900 rounded-full text-xs font-semibold uppercase tracking-wider mb-2">Established 2015 • London, UK</span>
+                        <h3 class="text-2xl font-bold text-gray-900">PERFUMY ATELIER</h3>
+                        <p class="text-sm text-gray-500 mt-1 max-w-xs">Distilling timeless botanical elegance into everyday luxury.</p>
+                    </div>
+
+                    <!-- Floating rating card -->
+                    <div class="absolute -bottom-6 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md border border-gray-100 shadow-2xl rounded-xl p-4 flex items-center space-x-3">
+                        <div class="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center text-purple-900 font-bold">
+                            <i class="ri-award-line text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-[11px] text-gray-500 uppercase tracking-wider font-medium">Customer Rating</p>
+                            <p class="text-base font-bold text-gray-900 flex items-center">
+                                4.9 / 5.0 <span class="text-amber-400 ml-1.5 text-xs">★★★★★</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Content & Project Story -->
+            <div class="w-full lg:w-1/2">
+                <div class="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-primary mb-3">
+                    <span class="w-6 h-[2px] bg-primary"></span>
+                    <span>About Perfumy & The Project</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 leading-snug">
+                    Redefining Modern Fragrance With Artisanal Craftsmanship
+                </h2>
+                <p class="text-gray-600 mb-4 text-base leading-relaxed">
+                    <strong>PERFUMY</strong> is a bespoke online fragrance boutique and digital showcase engineered to redefine how luxury scents are discovered and experienced. Designed in London, our platform bridges cutting-edge modern e-commerce web technology with the centuries-old artistry of haute parfumerie.
+                </p>
+                <p class="text-gray-600 mb-8 text-base leading-relaxed">
+                    Every signature bottle is formulated by master perfumers utilizing rare cold-pressed floral absolutes, sustainably harvested resins, and aged wood extracts. Compounded at Extrait de Parfum concentrations, our perfumes ensure a rich, unfolding olfactory experience with unmatched longevity and zero toxic additives.
+                </p>
+
+                <!-- 4 Core Brand Pillars -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+                    <div class="flex items-start space-x-3.5 p-3 rounded-lg bg-gray-50 hover:bg-purple-50/50 transition">
+                        <div class="w-10 h-10 rounded-lg bg-primary/20 flex-shrink-0 flex items-center justify-center text-purple-900">
+                            <i class="ri-leaf-line text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-900">100% Cruelty-Free</h4>
+                            <p class="text-xs text-gray-500 mt-1">Ethically sourced natural botanicals with zero animal testing.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3.5 p-3 rounded-lg bg-gray-50 hover:bg-purple-50/50 transition">
+                        <div class="w-10 h-10 rounded-lg bg-primary/20 flex-shrink-0 flex items-center justify-center text-purple-900">
+                            <i class="ri-time-line text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-900">12+ Hour Wear Time</h4>
+                            <p class="text-xs text-gray-500 mt-1">High-concentration formulas engineered for lasting sillage.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3.5 p-3 rounded-lg bg-gray-50 hover:bg-purple-50/50 transition">
+                        <div class="w-10 h-10 rounded-lg bg-primary/20 flex-shrink-0 flex items-center justify-center text-purple-900">
+                            <i class="ri-flask-line text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-900">Small-Batch Distilled</h4>
+                            <p class="text-xs text-gray-500 mt-1">Carefully formulated by master perfumers in limited releases.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3.5 p-3 rounded-lg bg-gray-50 hover:bg-purple-50/50 transition">
+                        <div class="w-10 h-10 rounded-lg bg-primary/20 flex-shrink-0 flex items-center justify-center text-purple-900">
+                            <i class="ri-truck-line text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-900">Global Luxury Delivery</h4>
+                            <p class="text-xs text-gray-500 mt-1">Complimentary worldwide tracked delivery in padded luxury packaging.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#products" class="bg-gray-900 text-white px-7 py-3 font-medium !rounded-button hover:bg-primary hover:text-gray-900 transition-all duration-300 inline-flex items-center shadow-sm">
+                        Explore The Collection <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium px-4 py-3 text-sm inline-flex items-center transition">
+                        Consult Scent Concierge <i class="ri-arrow-right-up-line ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <h3 class="text-2xl font-bold mb-2">Mystic Orchid</h3>
-    <p class="text-gray-600 mb-2 text-sm">A luxurious blend of exotic orchids and warm vanilla with hints of amber.</p>
-    <h3 class="text-2xl font-bold mb-2">Rosewood Bliss</h3>
-    <p class="text-gray-600 mb-2 text-sm">A delicate blend of rosewood and vanilla with subtle floral notes.</p>
-    <div class="flex justify-between items-center mt-auto">
-        <span class="text-xl font-bold">$50.00</span>
-        <button class="bg-gray-900 text-white px-4 py-2 text-sm !rounded-button hover:bg-primary hover:text-gray-900 transition-all duration-300 whitespace-nowrap group-hover:scale-105">See More</button>
+</section>
+
+<!-- Product Showcase -->
+<section id="products" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center max-w-2xl mx-auto mb-12">
+    <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Our Signature Releases</span>
+    <h2 class="text-3xl md:text-4xl font-bold mb-3 text-gray-900">Shop Our Wide Fragrance Perfume</h2>
+    <p class="text-gray-600">Discover our curated variety of long-lasting luxury perfume packages designed to indulge your senses.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+<!-- Product 1 -->
+<div class="bg-white p-6 rounded-xl shadow-sm flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary border border-gray-100 group relative overflow-hidden">
+    <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+    <div class="mb-5 h-64 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+        <img src="./images/pr1.jpg" alt="Rosewood Bliss Luxury Perfume" class="h-56 object-contain object-top transition-transform duration-300 group-hover:scale-110" loading="lazy">
+    </div>
+    <div class="flex items-center justify-between mb-1.5">
+        <span class="text-xs font-semibold text-primary uppercase tracking-wider">Eau de Parfum • 100ml</span>
+        <span class="text-[11px] bg-purple-100 text-purple-800 px-2.5 py-0.5 rounded-full font-medium">Best Seller</span>
+    </div>
+    <h3 class="text-2xl font-bold mb-2 text-gray-900">Rosewood Bliss</h3>
+    <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">A delicate blend of rare Bulgarian rosewood, exotic orchid petals, and Madagascar vanilla with warm golden amber undertones.</p>
+    <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-100">
+        <span class="text-2xl font-bold text-gray-900">$50.00</span>
+        <button onclick="handleAddToCart('Rosewood Bliss')" class="bg-gray-900 text-white px-5 py-2.5 text-sm !rounded-button hover:bg-primary hover:text-gray-900 transition-all duration-300 whitespace-nowrap group-hover:scale-105 font-medium shadow-sm" aria-label="Add Rosewood Bliss to Cart">Add to Cart</button>
     </div>
 </div>
 <!-- Product 2 -->
-<div class="bg-white p-6 rounded shadow-sm flex flex-col transition-transform duration-300 hover:-translate-y-3 hover:shadow-2xl hover:border-primary border border-transparent group relative overflow-hidden">
+<div class="bg-white p-6 rounded-xl shadow-sm flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary border border-gray-100 group relative overflow-hidden">
     <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
-    <div class="mb-6 h-64 bg-primary/10 rounded flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-        <img src="./images/pr2.jpg" alt="Lavender Dreams Perfume" class="h-56 object-contain object-top transition-transform duration-300 group-hover:scale-110">
+    <div class="mb-5 h-64 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+        <img src="./images/pr2.jpg" alt="Woodland Walk Luxury Perfume" class="h-56 object-contain object-top transition-transform duration-300 group-hover:scale-110" loading="lazy">
     </div>
-    <h3 class="text-2xl font-bold mb-2">Lavender Dreams</h3>
-    <p class="text-gray-600 mb-2 text-sm">Calming lavender essence mixed with sweet jasmine and violet notes.</p>
-    <h3 class="text-2xl font-bold mb-2">Woodland Walk</h3>
-    <p class="text-gray-600 mb-2 text-sm">Fresh forest scents with hints of cedar, pine, and wild berries.</p>
-    <div class="flex justify-between items-center mt-auto">
-        <span class="text-xl font-bold">$59.95</span>
-        <button class="bg-gray-900 text-white px-4 py-2 text-sm !rounded-button hover:bg-primary hover:text-gray-900 transition-all duration-300 whitespace-nowrap group-hover:scale-105">See More</button>
+    <div class="flex items-center justify-between mb-1.5">
+        <span class="text-xs font-semibold text-primary uppercase tracking-wider">Eau de Parfum • 100ml</span>
+        <span class="text-[11px] bg-purple-100 text-purple-800 px-2.5 py-0.5 rounded-full font-medium">Trending</span>
+    </div>
+    <h3 class="text-2xl font-bold mb-2 text-gray-900">Woodland Walk</h3>
+    <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">Calming French lavender essence infused with crisp cedarwood, fresh Scottish pine, and subtle wild forest berries.</p>
+    <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-100">
+        <span class="text-2xl font-bold text-gray-900">$59.95</span>
+        <button onclick="handleAddToCart('Woodland Walk')" class="bg-gray-900 text-white px-5 py-2.5 text-sm !rounded-button hover:bg-primary hover:text-gray-900 transition-all duration-300 whitespace-nowrap group-hover:scale-105 font-medium shadow-sm" aria-label="Add Woodland Walk to Cart">Add to Cart</button>
     </div>
 </div>
 <!-- Product 3 -->
-<div class="bg-white p-6 rounded shadow-sm flex flex-col transition-transform duration-300 hover:-translate-y-3 hover:shadow-2xl hover:border-primary border border-transparent group relative overflow-hidden">
+<div class="bg-white p-6 rounded-xl shadow-sm flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-primary border border-gray-100 group relative overflow-hidden">
     <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
-    <div class="mb-6 h-64 bg-primary/10 rounded flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-        <img src="./images/pr3.jpg" alt="Royal Iris Perfume" class="h-56 object-contain object-top transition-transform duration-300 group-hover:scale-110">
+    <div class="mb-5 h-64 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+        <img src="./images/pr3.jpg" alt="Lexus London Luxury Perfume" class="h-56 object-contain object-top transition-transform duration-300 group-hover:scale-110" loading="lazy">
     </div>
-    <h3 class="text-2xl font-bold mb-2">Royal Iris</h3>
-    <p class="text-gray-600 mb-2 text-sm">A majestic blend of iris, blackberry, and precious woods.</p>
-    <h3 class="text-2xl font-bold mb-2">Lexus London</h3>
-    <p class="text-gray-600 mb-2 text-sm">Sophisticated blend of amber, musk, and exotic spices.</p>
-    <div class="flex justify-between items-center mt-auto">
-        <span class="text-xl font-bold">$85.00</span>
-        <button class="bg-gray-900 text-white px-4 py-2 text-sm !rounded-button hover:bg-primary hover:text-gray-900 transition-all duration-300 whitespace-nowrap group-hover:scale-105">See More</button>
+    <div class="flex items-center justify-between mb-1.5">
+        <span class="text-xs font-semibold text-primary uppercase tracking-wider">Extrait de Parfum • 100ml</span>
+        <span class="text-[11px] bg-purple-100 text-purple-800 px-2.5 py-0.5 rounded-full font-medium">Signature</span>
+    </div>
+    <h3 class="text-2xl font-bold mb-2 text-gray-900">Lexus London</h3>
+    <p class="text-gray-600 mb-4 text-sm leading-relaxed flex-grow">A majestic blend of royal Tuscan iris, crushed rare spices, dark midnight amber, and precious agarwood for effortless prestige.</p>
+    <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-100">
+        <span class="text-2xl font-bold text-gray-900">$85.00</span>
+        <button onclick="handleAddToCart('Lexus London')" class="bg-gray-900 text-white px-5 py-2.5 text-sm !rounded-button hover:bg-primary hover:text-gray-900 transition-all duration-300 whitespace-nowrap group-hover:scale-105 font-medium shadow-sm" aria-label="Add Lexus London to Cart">Add to Cart</button>
     </div>
 </div>
 </div>
 </div>
 </section>
+
 <!-- Features Section -->
-<section class="py-16">
+<section id="qualities" class="py-20 bg-white">
 <div class="container mx-auto px-4">
-<h2 class="text-3xl font-bold text-center mb-16">Our Distinctive Qualities</h2>
+<div class="text-center max-w-2xl mx-auto mb-16">
+    <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Why Choose Perfumy</span>
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Distinctive Qualities</h2>
+    <p class="text-gray-500 mt-2 text-sm">Every detail meticulously perfected for the discerning fragrance lover.</p>
+</div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="flex flex-col items-center text-center">
-<div class="feature-circle mb-6">
-<i class="ri-time-line text-2xl text-gray-700"></i>
+<div class="flex flex-col items-center text-center p-6 rounded-xl hover:bg-gray-50 transition duration-300">
+<div class="feature-circle mb-6 shadow-sm">
+<i class="ri-time-line text-2xl text-purple-900"></i>
 </div>
-<h3 class="text-xl font-bold mb-3">Long Lasting Wear</h3>
-<p class="text-gray-600">Our fragrances are carefully formulated to last throughout your day, maintaining their distinctive scent profile from morning to evening.</p>
+<h3 class="text-xl font-bold mb-3 text-gray-900">Long Lasting Wear</h3>
+<p class="text-gray-600 leading-relaxed text-sm">Our fragrances are carefully formulated to last throughout your day, maintaining their distinctive scent profile from morning to evening.</p>
 </div>
-<div class="flex flex-col items-center text-center">
-<div class="feature-circle mb-6">
-<i class="ri-flask-line text-2xl text-gray-700"></i>
+<div class="flex flex-col items-center text-center p-6 rounded-xl hover:bg-gray-50 transition duration-300">
+<div class="feature-circle mb-6 shadow-sm">
+<i class="ri-flask-line text-2xl text-purple-900"></i>
 </div>
-<h3 class="text-xl font-bold mb-3">Unique Fragrance</h3>
-<p class="text-gray-600">Each perfume is crafted by master perfumers who blend rare and exotic ingredients to create truly distinctive scent experiences.</p>
+<h3 class="text-xl font-bold mb-3 text-gray-900">Unique Fragrance Profiles</h3>
+<p class="text-gray-600 leading-relaxed text-sm">Each perfume is crafted by master perfumers who blend rare and exotic ingredients to create truly distinctive, memorable scent experiences.</p>
 </div>
-<div class="flex flex-col items-center text-center">
-<div class="feature-circle mb-6">
-<i class="ri-leaf-line text-2xl text-gray-700"></i>
+<div class="flex flex-col items-center text-center p-6 rounded-xl hover:bg-gray-50 transition duration-300">
+<div class="feature-circle mb-6 shadow-sm">
+<i class="ri-leaf-line text-2xl text-purple-900"></i>
 </div>
-<h3 class="text-xl font-bold mb-3">Natural Ingredients</h3>
-<p class="text-gray-600">We source the finest natural ingredients from around the world, ensuring that our fragrances are as sustainable as they are luxurious.</p>
+<h3 class="text-xl font-bold mb-3 text-gray-900">Natural Ingredients</h3>
+<p class="text-gray-600 leading-relaxed text-sm">We source the finest natural ingredients from around the world, ensuring that our fragrances are as sustainable as they are luxurious.</p>
 </div>
 </div>
 </div>
 </section>
+
 <!-- Testimonial Section -->
-<section class="py-16 bg-primary/10">
+<section id="testimonials" class="py-20 bg-primary/10">
 <div class="container mx-auto px-4">
 <div class="max-w-3xl mx-auto">
-<h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+<div class="text-center mb-12">
+    <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Verified Reviews</span>
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">What Our Customers Say</h2>
+</div>
 <div class="relative h-[280px]">
-<div class="testimonial-slide absolute w-full opacity-0 transition-all duration-500 bg-white p-8 rounded-lg shadow-lg hover:shadow-xl">
+<div class="testimonial-slide absolute w-full opacity-0 transition-all duration-500 bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
 <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center absolute -top-8 left-1/2 transform -translate-x-1/2">
 <i class="ri-double-quotes-l text-3xl text-primary"></i>
 </div>
-<p class="text-gray-600 text-center italic mb-6 pt-4">
+<p class="text-gray-600 text-center italic mb-6 pt-4 text-base leading-relaxed">
 "I've tried many luxury fragrances over the years, but nothing compares to the Rosewood Bliss. The scent is sophisticated yet subtle, and I receive compliments every time I wear it. Plus, it lasts all day without needing to reapply!"
 </p>
 <div class="text-center">
-<h4 class="font-bold">Elizabeth Montgomery</h4>
-<p class="text-sm text-gray-500">Loyal Customer since 2018</p>
+<h4 class="font-bold text-gray-900">Elizabeth Montgomery</h4>
+<p class="text-sm text-gray-500">Loyal Customer since 2018 • London, UK</p>
 </div>
 </div>
-<div class="testimonial-slide absolute w-full opacity-0 transition-all duration-500 bg-white p-8 rounded-lg shadow-lg hover:shadow-xl">
+<div class="testimonial-slide absolute w-full opacity-0 transition-all duration-500 bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
 <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center absolute -top-8 left-1/2 transform -translate-x-1/2">
 <i class="ri-double-quotes-l text-3xl text-primary"></i>
 </div>
-<p class="text-gray-600 text-center italic mb-6 pt-4">
+<p class="text-gray-600 text-center italic mb-6 pt-4 text-base leading-relaxed">
 "The Woodland Walk fragrance has become my signature scent. It's the perfect balance of fresh and sophisticated. The natural ingredients make all the difference - I can tell this is a truly premium product."
 </p>
 <div class="text-center">
-<h4 class="font-bold">James Richardson</h4>
-<p class="text-sm text-gray-500">Loyal Customer since 2020</p>
+<h4 class="font-bold text-gray-900">James Richardson</h4>
+<p class="text-sm text-gray-500">Loyal Customer since 2020 • Manchester, UK</p>
 </div>
 </div>
-<div class="testimonial-slide absolute w-full opacity-0 transition-all duration-500 bg-white p-8 rounded-lg shadow-lg hover:shadow-xl">
+<div class="testimonial-slide absolute w-full opacity-0 transition-all duration-500 bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
 <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center absolute -top-8 left-1/2 transform -translate-x-1/2">
 <i class="ri-double-quotes-l text-3xl text-primary"></i>
 </div>
-<p class="text-gray-600 text-center italic mb-6 pt-4">
+<p class="text-gray-600 text-center italic mb-6 pt-4 text-base leading-relaxed">
 "Lexus London is pure luxury in a bottle. The attention to detail in the packaging and the complexity of the fragrance shows true craftsmanship. It's worth every penny for the confidence it gives me."
 </p>
 <div class="text-center">
-<h4 class="font-bold">Sophia Chen</h4>
-<p class="text-sm text-gray-500">Loyal Customer since 2019</p>
+<h4 class="font-bold text-gray-900">Sophia Chen</h4>
+<p class="text-sm text-gray-500">Loyal Customer since 2019 • Edinburgh, UK</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-const testimonials = document.querySelectorAll('.testimonial-slide');
-let currentSlide = 0;
-function showSlide(index) {
-testimonials.forEach(slide => {
-slide.style.opacity = '0';
-slide.style.transform = 'translateY(10px)';
-});
-testimonials[index].style.opacity = '1';
-testimonials[index].style.transform = 'translateY(0)';
-}
-function nextSlide() {
-currentSlide = (currentSlide + 1) % testimonials.length;
-showSlide(currentSlide);
-}
-showSlide(0);
-setInterval(nextSlide, 5000);
-});
-</script>
-<!-- Newsletter -->
-<section class="py-16 bg-white">
+
+<!-- Newsletter Section -->
+<section id="newsletter" class="py-20 bg-white">
 <div class="container mx-auto px-4">
-<div class="max-w-3xl mx-auto text-center">
-<h2 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
-<p class="text-gray-600 mb-8">Stay updated with our latest fragrances, exclusive offers, and perfume care tips.</p>
-<div class="flex flex-col sm:flex-row max-w-md mx-auto">
-    <input type="email" placeholder="Your email address" 
-           class="flex-1 px-4 py-3 border border-gray-200 rounded-t-button sm:rounded-l-button sm:rounded-tr-none mb-2 sm:mb-0">
-    <button class="bg-gray-900 text-white px-6 py-3 rounded-b-button sm:rounded-r-button sm:rounded-bl-none hover:bg-primary hover:text-gray-900 transition-all duration-300 whitespace-nowrap">
+<div class="max-w-2xl mx-auto text-center">
+<div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-purple-900">
+    <i class="ri-mail-send-line text-2xl"></i>
+</div>
+<h2 class="text-3xl font-bold mb-3 text-gray-900">Subscribe to Our Newsletter</h2>
+<p class="text-gray-600 mb-8 text-sm">Stay updated with our latest olfactory releases, exclusive VIP promotions, and perfume care guides.</p>
+<form id="newsletter-form" onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row max-w-md mx-auto">
+    <input type="email" id="newsletter-email" required placeholder="Enter your email address"
+           class="flex-1 px-4 py-3 border border-gray-300 rounded-t-button sm:rounded-l-button sm:rounded-tr-none mb-2 sm:mb-0 focus:outline-none focus:border-primary text-sm">
+    <button type="submit" class="bg-gray-900 text-white px-7 py-3 rounded-b-button sm:rounded-r-button sm:rounded-bl-none hover:bg-primary hover:text-gray-900 transition-all duration-300 whitespace-nowrap font-medium text-sm">
         Subscribe
     </button>
-</div>
+</form>
+<p class="text-[11px] text-gray-400 mt-3">We respect your privacy. Unsubscribe anytime.</p>
 </div>
 </div>
 </section>
+
 <!-- Footer -->
-<footer class="bg-gray-900 text-white pt-12 pb-6">
+<footer id="contact" class="bg-gray-900 text-white pt-16 pb-8">
     <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 <div>
-<h3 class="text-xl font-['Pacifico'] mb-4">PERFUMY</h3>
-<p class="text-gray-400 text-sm">Luxury fragrances crafted with passion and precision since 2015. Our mission is to help you discover your signature scent.</p>
+<div class="flex items-center space-x-2 mb-4">
+    <img src="./images/perfume.png" alt="Perfumy Flacon" class="w-7 h-7 object-contain brightness-200">
+    <span class="text-2xl font-['Pacifico'] text-white">PERFUMY</span>
 </div>
-<div>
-<h4 class="text-lg font-bold mb-4">Categories</h4>
-<ul class="space-y-2 text-gray-400 text-sm">
-<li><a href="#" class="hover:text-primary">For Women</a></li>
-<li><a href="#" class="hover:text-primary">For Men</a></li>
-<li><a href="#" class="hover:text-primary">Unisex</a></li>
-<li><a href="#" class="hover:text-primary">Gift Sets</a></li>
-<li><a href="#" class="hover:text-primary">Body Mists</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-bold mb-4">Popular Products</h4>
-<ul class="space-y-2 text-gray-400 text-sm">
-<li><a href="#" class="hover:text-primary">Rosewood Bliss</a></li>
-<li><a href="#" class="hover:text-primary">Woodland Walk</a></li>
-<li><a href="#" class="hover:text-primary">Lexus London</a></li>
-<li><a href="#" class="hover:text-primary">Midnight Orchid</a></li>
-<li><a href="#" class="hover:text-primary">Ocean Breeze</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-bold mb-4">Contact Us</h4>
-<ul class="space-y-2 text-gray-400 text-sm">
-<li class="flex items-center">
-<i class="ri-map-pin-line mr-2"></i>
-<span>123 Bond Street, London, UK</span>
-</li>
-<li class="flex items-center">
-<i class="ri-phone-line mr-2"></i>
-<span>+44 20 1234 5678</span>
-</li>
-<li class="flex items-center">
-<i class="ri-mail-line mr-2"></i>
-<span>info@perfumy.com</span>
-</li>
-</ul>
-<div class="flex space-x-4 mt-4">
-<a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary/80 transition">
+<p class="text-gray-400 text-sm leading-relaxed mb-4">Luxury fragrances crafted with passion and precision since 2015. Our mission is to help you discover your signature scent through ethical artisanal alchemy.</p>
+<div class="flex space-x-3">
+<a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-gray-900 transition text-gray-300">
 <i class="ri-facebook-fill"></i>
 </a>
-<a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary/80 transition">
+<a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-gray-900 transition text-gray-300">
 <i class="ri-instagram-line"></i>
 </a>
-<a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary/80 transition">
+<a href="#" aria-label="Twitter / X" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-gray-900 transition text-gray-300">
 <i class="ri-twitter-x-line"></i>
 </a>
-<a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary/80 transition">
+<a href="#" aria-label="Pinterest" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-gray-900 transition text-gray-300">
 <i class="ri-pinterest-line"></i>
 </a>
 </div>
 </div>
+<div>
+<h4 class="text-lg font-bold mb-4 text-white">Fragrance Categories</h4>
+<ul class="space-y-2 text-gray-400 text-sm">
+<li><a href="#products" class="hover:text-primary transition">For Women</a></li>
+<li><a href="#products" class="hover:text-primary transition">For Men</a></li>
+<li><a href="#products" class="hover:text-primary transition">Unisex Collections</a></li>
+<li><a href="#products" class="hover:text-primary transition">Artisan Gift Sets</a></li>
+<li><a href="#products" class="hover:text-primary transition">Extrait de Parfum</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4 text-white">Popular Scents</h4>
+<ul class="space-y-2 text-gray-400 text-sm">
+<li><a href="#products" class="hover:text-primary transition">Rosewood Bliss</a></li>
+<li><a href="#products" class="hover:text-primary transition">Woodland Walk</a></li>
+<li><a href="#products" class="hover:text-primary transition">Lexus London</a></li>
+<li><a href="#products" class="hover:text-primary transition">Midnight Orchid</a></li>
+<li><a href="#products" class="hover:text-primary transition">Ocean Breeze</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4 text-white">Contact & Atelier</h4>
+<ul class="space-y-3 text-gray-400 text-sm">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-2.5 text-primary mt-1"></i>
+<span>123 Bond Street, Mayfair, London, W1S 2TL, UK</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-2.5 text-primary"></i>
+<span>+44 20 1234 5678</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-2.5 text-primary"></i>
+<span>concierge@perfumy.com</span>
+</li>
+<li class="flex items-center">
+<i class="ri-time-line mr-2.5 text-primary"></i>
+<span>Mon - Sat: 10:00 AM - 7:00 PM</span>
+</li>
+</ul>
+</div>
 </div>
 <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center">
-<p class="text-gray-400 text-sm text-center sm:text-left mb-4 sm:mb-0">© 2025 Perfumy. All Rights Reserved.</p>
-<div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-<a href="#" class="text-gray-400 text-sm hover:text-primary">Privacy Policy</a>
-<a href="#" class="text-gray-400 text-sm hover:text-primary">Terms & Conditions</a>
-<div class="flex items-center space-x-2">
-<i class="ri-visa-line text-xl"></i>
-<i class="ri-mastercard-line text-xl"></i>
-<i class="ri-paypal-line text-xl"></i>
-<i class="ri-apple-fill text-xl"></i>
+<p class="text-gray-400 text-sm text-center sm:text-left mb-4 sm:mb-0">© 2025 PERFUMY Boutique. All Rights Reserved.</p>
+<div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6">
+<div class="flex space-x-4 text-xs text-gray-400">
+<a href="#" class="hover:text-primary transition">Privacy Policy</a>
+<span>•</span>
+<a href="#" class="hover:text-primary transition">Terms of Service</a>
+<span>•</span>
+<a href="#" class="hover:text-primary transition">Shipping Policy</a>
+</div>
+<div class="flex items-center space-x-3 text-gray-400">
+<i class="ri-visa-line text-2xl hover:text-white transition"></i>
+<i class="ri-mastercard-line text-2xl hover:text-white transition"></i>
+<i class="ri-paypal-line text-2xl hover:text-white transition"></i>
+<i class="ri-apple-fill text-xl hover:text-white transition"></i>
 </div>
 </div>
 </div>
 </div>
 </footer>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-// Add animation to decorative circles
-const circles = document.querySelectorAll('.decorative-circle');
-circles.forEach(circle => {
-let rotation = 0;
-setInterval(() => {
-rotation += 0.1;
-circle.style.transform = `rotate(${rotation}deg)`;
-}, 50);
-});
-});
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
 
+<!-- Toast Notification Container -->
+<div id="toast" class="fixed bottom-6 right-6 z-50 bg-gray-900 text-white px-5 py-3 rounded-lg shadow-2xl flex items-center space-x-3 transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none">
+    <i class="ri-checkbox-circle-fill text-green-400 text-xl" id="toast-icon"></i>
+    <span class="text-sm font-medium" id="toast-message">Item added to your cart!</span>
+</div>
+
+<!-- Scripts -->
+<script>
+// Testimonial Carousel
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonials = document.querySelectorAll('.testimonial-slide');
+    if (testimonials.length > 0) {
+        let currentSlide = 0;
+        function showSlide(index) {
+            testimonials.forEach(slide => {
+                slide.style.opacity = '0';
+                slide.style.transform = 'translateY(10px)';
+                slide.style.pointerEvents = 'none';
+            });
+            testimonials[index].style.opacity = '1';
+            testimonials[index].style.transform = 'translateY(0)';
+            testimonials[index].style.pointerEvents = 'auto';
+        }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % testimonials.length;
+            showSlide(currentSlide);
+        }
+        showSlide(0);
+        setInterval(nextSlide, 5000);
+    }
+
+    // Navigation and Mobile Menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const allCategoriesBtn = document.getElementById('all-categories-btn');
+    const mobileDropdown = document.getElementById('mobile-dropdown');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+    }
 
-        // Close mobile menu on window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) { // md breakpoint
-                mobileMenu.classList.add('hidden');
-            }
-        });
-
-        // All Categories dropdown for mobile
-        const allCategoriesBtn = document.getElementById('all-categories-btn');
-        const mobileDropdown = document.getElementById('mobile-dropdown');
-        function handleDropdown(e) {
+    if (allCategoriesBtn && mobileDropdown) {
+        allCategoriesBtn.addEventListener('click', (e) => {
             if (window.innerWidth < 768) {
                 mobileDropdown.classList.toggle('hidden');
                 e.stopPropagation();
             }
-        }
-        allCategoriesBtn.addEventListener('click', handleDropdown);
+        });
 
         // Close dropdown when clicking outside
         document.addEventListener('click', function(e) {
@@ -453,18 +613,60 @@ circle.style.transform = `rotate(${rotation}deg)`;
                 mobileDropdown.classList.add('hidden');
             }
         });
+    }
 
-        // Ensure dropdown is visible on desktop and hidden on mobile by default
-        function handleResize() {
-            if (window.innerWidth >= 768) {
-                mobileDropdown.classList.remove('hidden');
-            } else {
-                mobileDropdown.classList.add('hidden');
+    // Auto-close mobile menus on nav link click
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+                if (mobileDropdown) mobileDropdown.classList.add('hidden');
+                if (mobileMenu) mobileMenu.classList.add('hidden');
             }
-        }
-        window.addEventListener('resize', handleResize);
-        handleResize();
+        });
     });
+
+    // Window Resize handler
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            if (mobileDropdown) mobileDropdown.classList.remove('hidden');
+            if (mobileMenu) mobileMenu.classList.add('hidden');
+        } else {
+            if (mobileDropdown) mobileDropdown.classList.add('hidden');
+        }
+    });
+});
+
+// Toast notification helper
+function showToast(message, isSuccess = true) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-message');
+    const toastIcon = document.getElementById('toast-icon');
+
+    if (!toast) return;
+    toastMsg.textContent = message;
+    toastIcon.className = isSuccess ? 'ri-checkbox-circle-fill text-green-400 text-xl' : 'ri-error-warning-fill text-amber-400 text-xl';
+    
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    }, 3200);
+}
+
+function handleAddToCart(productName) {
+    showToast(`Added "${productName}" to your cart!`);
+}
+
+function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    if (email) {
+        showToast('Thank you for subscribing to Perfumy updates!');
+        document.getElementById('newsletter-form').reset();
+    }
+}
 </script>
 </body>
 </html>
